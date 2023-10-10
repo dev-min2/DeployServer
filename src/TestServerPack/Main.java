@@ -25,21 +25,21 @@ public class Main {
 	    	sock = new ServerSock(9999);
 			sock.init();
 			
-			// Á¢±Ù °æ·Î.
-			String accessXmlPath = "../resource/commandList.xml";
+			// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½.
+			String accessXmlPath = "resource/commandList.xml";
 			
 			Path currentRelativePath = Paths.get("");
 			String currentAbsoulutePath = currentRelativePath.toAbsolutePath().toString();
 			
 			String[] splitArray = currentAbsoulutePath.split("\\\\");
 			if(splitArray[splitArray.length - 1].equals("bin")) {
-				accessXmlPath = "../../resource/commandList.xml";
+				accessXmlPath = "../resource/commandList.xml";
 			}
 	    	
 			InputSource is = new InputSource(new FileReader(accessXmlPath));
 			xml = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(is);
 			NodeList childNodelist = xml.getDocumentElement().getChildNodes();
-			// child node °¡ 1°³ ÀÌ»óÀÎ °æ¿ì
+			// child node ï¿½ï¿½ 1ï¿½ï¿½ ï¿½Ì»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 			if(childNodelist.getLength() > 0) {
 				for(int nodeIndex = 0; nodeIndex < childNodelist.getLength(); nodeIndex++) {
 					if(childNodelist.item(nodeIndex).getNodeName().equals("command")) {
@@ -64,7 +64,7 @@ public class Main {
 		
 		while(true) {	
 			String recvStr = sock.recvData();
-			System.out.println(recvStr + " Command ¼ö½Å");
+			System.out.println(recvStr + " Command ï¿½ï¿½ï¿½ï¿½");
 			sock.sendData(recvStr);
 			
 			if(recvStr.equals("4"))
