@@ -22,7 +22,7 @@ public class Main {
 		
 		Document xml = null;
 	    try {
-	    	sock = new ServerSock(9999);
+	    	sock = new ServerSock(10300);
 			sock.init();
 			
 
