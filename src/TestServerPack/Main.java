@@ -25,7 +25,7 @@ public class Main {
 	    	sock = new ServerSock(9999);
 			sock.init();
 			
-			// ���� ���.
+
 			String accessXmlPath = "resource/commandList.xml";
 			
 			Path currentRelativePath = Paths.get("");
@@ -39,7 +39,7 @@ public class Main {
 			InputSource is = new InputSource(new FileReader(accessXmlPath));
 			xml = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(is);
 			NodeList childNodelist = xml.getDocumentElement().getChildNodes();
-			// child node �� 1�� �̻��� ���
+
 			if(childNodelist.getLength() > 0) {
 				for(int nodeIndex = 0; nodeIndex < childNodelist.getLength(); nodeIndex++) {
 					if(childNodelist.item(nodeIndex).getNodeName().equals("command")) {
