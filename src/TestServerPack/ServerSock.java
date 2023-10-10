@@ -9,7 +9,7 @@ public class ServerSock implements Closeable {
 	private Socket clientSock; 
 	private InputStream clientInputStream;
     private OutputStream clientOutputStream;
-	
+	// 한글테스트
 	ServerSock(int port) throws IOException {
 		serverSock = new ServerSocket(port);
 		
